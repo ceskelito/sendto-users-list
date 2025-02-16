@@ -7,7 +7,7 @@ USERNAME=$(whoami | awk '{print "\n"$1}')
 REPO_OWNER="ceskelito"
 REPO_NAME="sendto-userslist"
 FILE_PATH="userslist"
-TOKEN="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"  
+TOKEN="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"  
 
 # URL per GitHub API
 URL="https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/contents/$FILE_PATH"
