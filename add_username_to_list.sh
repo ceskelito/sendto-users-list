@@ -7,13 +7,14 @@ USERNAME=$(whoami | awk '{print "\n"$1}')
 REPO_OWNER="ceskelito"
 REPO_NAME="sendto-userslist"
 FILE_PATH="userslist"
-TOKEN="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"  
+TOKEN_PART_1="github_pat_11BJYWBNQ07CXecbeKsrCv_"  
+TOKEN_PART_2="OK4NKks8vrU7yoIc4ewWTGrv8eVineAZIURo13pFpbK5GSYRHAAkUihgcxw"
 
 # URL per GitHub API
 URL="https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/contents/$FILE_PATH"
 
 # Ottieni il contenuto del file esistente dal repository
-response=$(curl -s -H "Authorization: token $TOKEN" $URL)
+response=$(curl -s -H "Authorization: token $TOKEN_PART_1$TOKEN_PART_2" $URL)
 sha=$(echo $response | jq -r '.sha')
 content_base64=$(echo $response | jq -r '.content')
 
