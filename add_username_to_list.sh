@@ -20,7 +20,7 @@ sha=$(echo "$response" | jq -r '.sha')
 content_base64=$(echo "$response" | jq -r '.content')
 
 # Controlla se il file esiste e il contenuto è valido
-if [[ -z "$sha" || -z "$content_base64" || "$content_base64" == "null" ]]; then
+if [[ -z "$sha" || -z "$content_base64" ; "$content_base64" == "null" ]]; then
   echo "Errore: Il file non esiste o non è accessibile."
   exit 1
 fi
